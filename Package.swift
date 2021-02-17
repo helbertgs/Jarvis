@@ -23,7 +23,16 @@ let package = Package(
             name: "Jarvis",
             dependencies: []),
         .testTarget(
-            name: "JarvisTests",
+            name: "Unit",
+            dependencies: ["Jarvis", "Nimble", "Quick"]),
+        .testTarget(
+            name: "Functional",
+            dependencies: ["Jarvis", "Nimble", "Quick"]),
+        .testTarget(
+            name: "Snapshot",
+            dependencies: ["Jarvis", "Nimble", "Quick"]),
+        .testTarget(
+            name: "E2E",
             dependencies: ["Jarvis", "Nimble", "Quick"]),
     ]
 )

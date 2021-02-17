@@ -5,10 +5,10 @@ import XCTest
 
 final class JarvisTests: QuickSpec {
     override func spec() {
-        describe("Jaris") {
-            context("when init") {
+        describe("") {
+            context("") {
                 it("") {
-                    let jarvis = Jarvis(url: "")
+                    expect(0).to(equal(0))
                 }
             }
         }

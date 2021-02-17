@@ -1,0 +1,24 @@
+lane :unit do |params|
+    test(scheme: params[:scheme], device: params[:device], only_testing: "Unit")
+end
+
+lane :functional do |params|
+    test(scheme: params[:scheme], device: params[:device], only_testing: "Functional")
+end
+
+lane :ui do |params|
+    test(scheme: params[:scheme], device: params[:device], only_testing: "Snapshot")
+end
+
+lane :e2e do |params|
+    test(scheme: params[:scheme], device: params[:device], only_testing: "E2E")
+end
+
+private_lane :test do |params|
+run_tests(workspace: ".swiftpm/xcode/package.xcworkspace",
+        devices: params[:device],
+        scheme: params[:scheme],
+        only_testing: params[:only_testing],
+        derived_data_path: ".DataPath",
+        code_coverage: true)
+end

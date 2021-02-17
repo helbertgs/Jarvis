@@ -1,8 +1,20 @@
-//
-//  File.swift
-//  
-//
-//  Created by Helbert Gomes on 17/02/21.
-//
+import Nimble
+import Quick
+import XCTest
+@testable import Jarvis
 
-import Foundation
+final class JarvisTests: QuickSpec {
+    override func spec() {
+        describe("") {
+            context("") {
+                it("") {
+                    expect(0).to(equal(0))
+                }
+            }
+        }
+    }
+
+    static var allTests = [
+        ("spec", spec),
+    ]
+}
