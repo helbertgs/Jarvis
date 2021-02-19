@@ -3,7 +3,6 @@
 /Packages
 /*.xcodeproj
 xcuserdata/
-/.swiftpm
 Package.resolved
 /.DataPath
 /fastlane/test_output
