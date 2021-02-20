@@ -17,7 +17,7 @@ public final class Settings {
 
     // MARK: - Constructor(s)
 
-    init(with options: [Option]) {
+    public init(with options: [Option]) {
         options.forEach {
             switch $0 {
                 case .chromeless(let isChromeless): self.isChromeless = isChromeless

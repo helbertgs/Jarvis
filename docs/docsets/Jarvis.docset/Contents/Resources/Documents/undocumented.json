@@ -1,0 +1,12 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/lahelbert/Development/Helbert/Jarvis/Sources/Jarvis/Settings.swift",
+      "line": 3,
+      "symbol": "Settings",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/lahelbert/Development/Helbert/Jarvis"
+}
