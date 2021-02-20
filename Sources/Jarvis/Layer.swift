@@ -1,8 +1,16 @@
 import Foundation
 
-public final class Layer: ObservableObject {
+public protocol LayerProtocol: class {
+}
+
+public protocol LayerDelegate: class {
+}
+
+public class Layer: ObservableObject, LayerProtocol {
 
     // MARK: - Public Property(ies).
+
+    public weak var delegate: LayerDelegate?
 
     public var name: String { "\(Self.self)" }
 
