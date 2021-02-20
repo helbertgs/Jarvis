@@ -20,6 +20,9 @@ snapshot: ## Run only snapshot tests
 e2e: ## Run only e2e tests
 	bundle exec fastlane e2e --env $(platform)
 
+docs: ## Generate docs
+	jazzy --module Jarvis
+
 wipe: ## Clean xcode temp files and shuts down simulators
 	killall "Simulator" || true
 	rm -rf ~/Library/Developer/Xcode/{DerivedData,Archives,Products}

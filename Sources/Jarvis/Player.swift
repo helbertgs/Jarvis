@@ -14,7 +14,7 @@ class Player {
 
         Store
             .shared
-            .add(layer: Layer.self)
+            .add(layers: Layer.self)
     }
     
     // MARK: - Public Subscript(s).

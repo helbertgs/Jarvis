@@ -1,6 +1,6 @@
 import Foundation
 
-enum Option {
+public enum Option {
     case chromeless(Bool)
     case fullScreen(Bool)
     case loop(Bool)

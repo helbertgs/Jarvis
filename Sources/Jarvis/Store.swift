@@ -1,6 +1,6 @@
 import Foundation
 
-final class Store {
+public final class Store {
 
     typealias Items = [Layer: [Any]]
 
@@ -14,13 +14,13 @@ final class Store {
 
     // MARK: - Constructor(s)
 
-    init() {
+    public init() {
         self.items = Items()
     }
 
     // MARK: - Function(s)
 
-    func add(layers: Layer.Type...) {
+    public func add(layers: Layer.Type...) {
         layers.forEach { self.items[$0.init()] = [] }
     }
 }
