@@ -5,7 +5,7 @@ FASTLANE=$(LANG_VAR) $(BUNDLE) exec fastlane
 unit: ## Run only unit tests
 	# bundle exec fastlane unit --env $(platform)
 	swift build -v
-	swift test -v
+	swift test -v --enable-code-coverage --show-codecov-path
 
 doc: ## Generate docs
 	jazzy --module Jarvis
