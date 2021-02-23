@@ -23,11 +23,11 @@ public final class Store {
             self?.layers.append(layer)
 
             layer.awake()
-            self?.register(plugins: layer.required, on: layerType)
+            self?.add(plugins: layer.required, on: layerType)
         }
     }
 
-    func register(plugins: [Plugin.Type], on layer: Layer.Type) {
+    func add(plugins: [Plugin.Type], on layer: Layer.Type) {
         plugins.forEach { [weak self] pluginType in
             guard let `self` = self, let layer = self.get(layer: layer) else { return }
 
