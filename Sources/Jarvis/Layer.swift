@@ -1,18 +1,19 @@
 import Foundation
 
 public protocol LayerProtocol: class {
-}
-
-public protocol LayerDelegate: class {
+    func awake()
+    func start()
 }
 
 public class Layer: ObservableObject, LayerProtocol {
 
     // MARK: - Public Property(ies).
 
-    public weak var delegate: LayerDelegate?
+    /// The name of the Layer.
+    public lazy var name: String = { "\(Self.self)" }()
 
-    public var name: String { "\(Self.self)" }
+    /// The Require automatically adds required plugins as dependencies
+    open lazy var required: [Plugin.Type] = { [] }()
 
     @Published
     public var isEnable: Bool = true
@@ -23,6 +24,22 @@ public class Layer: ObservableObject, LayerProtocol {
     // MARK: - Constructor(s).
 
     public required init() { }
+
+    // MARK: - Public Function(s).
+
+    /// Awake is called when the Layer instance is being loaded.
+    open func awake() { }
+    open func start() { }
+
+    // MARK: - Internal Function(s).
+
+    func get(plugin: Plugin.Type) -> Plugin? {
+        Store.shared.get(plugin: plugin, from: Self.self)
+    }
+
+    func get(plugin: Plugin.Type) -> [Plugin] {
+        Store.shared.get(plugin: plugin, from: Self.self)
+    }
 }
 
 extension Layer: Identifiable {

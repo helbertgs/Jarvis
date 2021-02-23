@@ -8,20 +8,49 @@ public final class Store {
 
     // MARK: - Private Property(ies).
 
-    private var items: Set<Item>
+    private var layers = [Layer]()
+    private var plugins = [Plugin]()
 
     // MARK: - Constructor(s)
 
-    public init() {
-        self.items = .init()
+    public init() { }
+
+    // MARK: - Internal Function(s).
+
+    func add(layers: Layer.Type...) {
+        layers.forEach { [weak self] layerType in
+            let layer = layerType.init()
+            self?.layers.append(layer)
+
+            layer.awake()
+            self?.register(plugins: layer.required, on: layerType)
+        }
     }
 
-    // MARK: - Function(s)
+    func register(plugins: [Plugin.Type], on layer: Layer.Type) {
+        plugins.forEach { [weak self] pluginType in
+            guard let `self` = self, let layer = self.get(layer: layer) else { return }
 
-    public func add(layers: Layer.Type...) {
-        layers.forEach {
-            self.items
-                .insert(.init(with: $0.init()))
+            let plugin = pluginType.init(layer: layer)
+            self.plugins.append(plugin)
+
+            plugin.awake()
         }
+    }
+
+    func get(layer: Layer.Type) -> Layer? {
+        layers.first { $0.name == "\(layer.self)" }
+    }
+
+    func get(plugin: Plugin.Type, from layer: Layer.Type) -> Plugin? {
+        plugins
+            .filter { $0.layer.name == "\(layer.self)" }
+            .first { $0.name == "\(plugin.self)" }
+    }
+
+    func get(plugin: Plugin.Type, from layer: Layer.Type) -> [Plugin] {
+        plugins
+            .filter { $0.layer.name == "\(layer.self)" }
+            .filter { $0.name == "\(plugin.self)" }
     }
 }
