@@ -2,23 +2,8 @@ BUNDLE=rbenv exec bundle
 LANG_VAR=LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 FASTLANE=$(LANG_VAR) $(BUNDLE) exec fastlane
 
-test: ## Run all tests
-	bundle exec fastlane unit --env $(platform)
-	bundle exec fastlane functional --env $(platform)
-	bundle exec fastlane snapshot --env $(platform)
-	bundle exec fastlane e2e --env $(platform)
-
 unit: ## Run only unit tests
 	bundle exec fastlane unit --env $(platform)
-
-functional: ## Run only functional tests
-	bundle exec fastlane functional --env $(platform)
-
-snapshot: ## Run only snapshot tests
-	bundle exec fastlane ui --env $(platform)
-
-e2e: ## Run only e2e tests
-	bundle exec fastlane e2e --env $(platform)
 
 docs: ## Generate docs
 	jazzy --module Jarvis

@@ -1,17 +1,5 @@
 lane :unit do |params|
-    test(scheme: params[:scheme], device: params[:device], only_testing: "Unit")
-end
-
-lane :functional do |params|
-    test(scheme: params[:scheme], device: params[:device], only_testing: "Functional")
-end
-
-lane :ui do |params|
-    test(scheme: params[:scheme], device: params[:device], only_testing: "Snapshot")
-end
-
-lane :e2e do |params|
-    test(scheme: params[:scheme], device: params[:device], only_testing: "E2E")
+    test(scheme: params[:scheme], device: params[:device], only_testing: "JarvisTests")
 end
 
 private_lane :test do |params|
