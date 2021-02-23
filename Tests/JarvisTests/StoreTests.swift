@@ -17,4 +17,8 @@ final class StoreTests: QuickSpec {
             }
         }
     }
+
+    static var allTests = [
+        ("spec", spec)
+    ]
 }

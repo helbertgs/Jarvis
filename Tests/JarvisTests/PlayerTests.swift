@@ -35,4 +35,8 @@ final class PlayerTests: QuickSpec {
             }
         }
     }
+
+    static var allTests = [
+        ("spec", spec)
+    ]
 }

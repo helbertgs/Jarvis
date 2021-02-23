@@ -25,10 +25,7 @@ let package = Package(
             name: "Jarvis",
             dependencies: []),
         .testTarget(
-            name: "Unit",
-            dependencies: ["Jarvis", "Nimble", "Quick"]),
-        .testTarget(
-            name: "Functional",
+            name: "JarvisTests",
             dependencies: ["Jarvis", "Nimble", "Quick"])
     ]
 )
