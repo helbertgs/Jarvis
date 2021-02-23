@@ -20,21 +20,6 @@ or alternatively using `brew install fastlane`
 fastlane unit
 ```
 
-### functional
-```
-fastlane functional
-```
-
-### ui
-```
-fastlane ui
-```
-
-### e2e
-```
-fastlane e2e
-```
-
 
 ----
 

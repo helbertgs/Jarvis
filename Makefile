@@ -3,7 +3,9 @@ LANG_VAR=LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 FASTLANE=$(LANG_VAR) $(BUNDLE) exec fastlane
 
 unit: ## Run only unit tests
-	bundle exec fastlane unit --env $(platform)
+	# bundle exec fastlane unit --env $(platform)
+	swift build -v
+	swift test -v
 
 doc: ## Generate docs
 	jazzy --module Jarvis
@@ -13,7 +15,7 @@ wipe: ## Clean xcode temp files and shuts down simulators
 	rm -rf ~/Library/Developer/Xcode/{DerivedData,Archives,Products}
 	osascript -e 'tell application "iOS Simulator" to quit'
 	osascript -e 'tell application "Simulator" to quit'
-	xcrun simctl shutdown all
+	xcrun simctl shutdown allß
 	xcrun simctl erase all
 
 help: ## Show this list of commands
