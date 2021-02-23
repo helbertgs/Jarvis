@@ -5,7 +5,7 @@ FASTLANE=$(LANG_VAR) $(BUNDLE) exec fastlane
 unit: ## Run only unit tests
 	bundle exec fastlane unit --env $(platform)
 
-docs: ## Generate docs
+doc: ## Generate docs
 	jazzy --module Jarvis
 
 wipe: ## Clean xcode temp files and shuts down simulators
