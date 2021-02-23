@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Classes  Reference</title>
+    <title>Protocols  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Section/Classes" class="dashAnchor"></a>
-    <a title="Classes  Reference"></a>
+    <a name="//apple_ref/swift/Section/Protocols" class="dashAnchor"></a>
+    <a title="Protocols  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html">Jarvis Docs</a> (19% documented)</p>
@@ -29,7 +29,7 @@
       <p id="breadcrumbs">
         <a href="index.html">Jarvis Reference</a>
         <img id="carat" src="img/carat.png" />
-        Classes  Reference
+        Protocols  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -79,8 +79,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Classes</h1>
-            <p>The following classes are available globally.</p>
+            <h1>Protocols</h1>
+            <p>The following protocols are available globally.</p>
 
           </section>
           <section class="section task-group-section">
@@ -89,9 +89,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Jarvis5LayerC"></a>
-                    <a name="//apple_ref/swift/Class/Layer" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Jarvis5LayerC">Layer</a>
+                    <a name="/s:6Jarvis13LayerProtocolP"></a>
+                    <a name="//apple_ref/swift/Protocol/LayerProtocol" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis13LayerProtocolP">LayerProtocol</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -101,16 +101,13 @@
                       <div class="abstract">
                         <p>Undocumented</p>
 
-                        <a href="Classes/Layer.html" class="slightly-smaller">See more</a>
+                        <a href="Protocols/LayerProtocol.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Layer</span> <span class="p">:</span> <span class="kt">ObservableObject</span><span class="p">,</span> <span class="kt"><a href="Protocols/LayerProtocol.html">LayerProtocol</a></span></code></pre>
-<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Layer</span><span class="p">:</span> <span class="kt">Identifiable</span></code></pre>
-<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Layer</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
-<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Layer</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">LayerProtocol</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                         </div>
                       </div>
@@ -120,9 +117,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Jarvis6PluginC"></a>
-                    <a name="//apple_ref/swift/Class/Plugin" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Jarvis6PluginC">Plugin</a>
+                    <a name="/s:6Jarvis13LayerDelegateP"></a>
+                    <a name="//apple_ref/swift/Protocol/LayerDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis13LayerDelegateP">LayerDelegate</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -132,13 +129,12 @@
                       <div class="abstract">
                         <p>Undocumented</p>
 
-                        <a href="Classes/Plugin.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Plugin</span> <span class="p">:</span> <span class="kt">ObservableObject</span><span class="p">,</span> <span class="kt"><a href="Protocols/PluginProtocol.html">PluginProtocol</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">LayerDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                         </div>
                       </div>
@@ -148,9 +144,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Jarvis8SettingsC"></a>
-                    <a name="//apple_ref/swift/Class/Settings" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Jarvis8SettingsC">Settings</a>
+                    <a name="/s:6Jarvis14PluginProtocolP"></a>
+                    <a name="//apple_ref/swift/Protocol/PluginProtocol" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis14PluginProtocolP">PluginProtocol</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -160,41 +156,13 @@
                       <div class="abstract">
                         <p>Undocumented</p>
 
-                        <a href="Classes/Settings.html" class="slightly-smaller">See more</a>
+                        <a href="Protocols/PluginProtocol.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Settings</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Jarvis5StoreC"></a>
-                    <a name="//apple_ref/swift/Class/Store" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Jarvis5StoreC">Store</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                        <a href="Classes/Store.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Store</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PluginProtocol</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                         </div>
                       </div>

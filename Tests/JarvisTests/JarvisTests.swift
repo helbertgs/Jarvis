@@ -5,4 +5,8 @@ import XCTest
 
 final class JarvisTests: QuickSpec {
     override func spec() { }
+
+    static var allTests = [
+        ("spec", spec)
+    ]
 }
