@@ -7,11 +7,10 @@ let package = Package(
     name: "Jarvis",
     platforms: [
         .iOS(.v14),
-        .tvOS(.v14),
-        .macOS(.v10_15)
+        .macOS(.v10_15),
+        .tvOS(.v14)
     ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "Jarvis",
             targets: ["Jarvis"]),
@@ -23,9 +22,11 @@ let package = Package(
     targets: [
         .target(
             name: "Jarvis",
-            dependencies: []),
+            dependencies: [],
+            path: "Sources"),
         .testTarget(
             name: "JarvisTests",
-            dependencies: ["Jarvis", "Nimble", "Quick"])
+            dependencies: ["Jarvis", "Nimble", "Quick"],
+            path: "Tests")
     ]
 )

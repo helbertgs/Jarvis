@@ -7,13 +7,15 @@ setup:
 	brew upgrade
 	brew install xcodegen
 
-generate:
+generate: ## Create a xcodeproject
 	xcodegen generate
 
+spm: ## Run all tests on Swift Package Manager
+	swift build
+	swift test
+
 unit: ## Run only unit tests
-	# bundle exec fastlane unit --env $(platform)
-	swift build -v
-	swift test -v --enable-code-coverage --show-codecov-path
+	bundle exec fastlane unit --env $(platform)
 
 doc: ## Generate docs
 	jazzy --module Jarvis
@@ -23,7 +25,7 @@ wipe: ## Clean xcode temp files and shuts down simulators
 	rm -rf ~/Library/Developer/Xcode/{DerivedData,Archives,Products}
 	osascript -e 'tell application "iOS Simulator" to quit'
 	osascript -e 'tell application "Simulator" to quit'
-	xcrun simctl shutdown allß
+	xcrun simctl shutdown all
 	xcrun simctl erase all
 
 help: ## Show this list of commands

@@ -1,0 +1,37 @@
+name: Jarvis
+options:
+  generateEmptyDirectories: true
+  deploymentTarget: 
+    iOS: "14.0"
+    tvOS: "14.0"
+
+packages:
+  Nimble:
+    url: https://github.com/Quick/Quick.git
+    branch: master
+  Quick:
+    url: https://github.com/Quick/Nimble.git
+    branch: master
+
+targets:
+  Jarvis:
+    type: framework
+    platform: [iOS, tvOS]
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: "br.com.Jarvis"
+    scheme:
+      gatherCoverageData: true
+      testTargets:
+        - name: JarvisTests_${platform}
+          parallelizable: true
+          randomExecutionOrder: true
+    sources: [Sources]
+
+  JarvisTests:
+    type: bundle.unit-test
+    platform: [iOS, tvOS]
+    sources: [Tests]
+    dependencies:
+      - target: Jarvis_${platform}
+      - package: Nimble
+      - package: Quick
