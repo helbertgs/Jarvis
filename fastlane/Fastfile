@@ -1,12 +1,21 @@
-lane :unit do |params|
-    test(scheme: params[:scheme], device: params[:device], only_testing: "JarvisTests")
+lane :unit do
+    test(project: ENV['project'], scheme: ENV['scheme'], device: ENV['device'])
+    report(project: ENV['project'], scheme: ENV['scheme'])
 end
 
 private_lane :test do |params|
-run_tests(workspace: ".swiftpm/xcode/package.xcworkspace",
+    scan(project: params[:project],
         devices: params[:device],
         scheme: params[:scheme],
-        only_testing: params[:only_testing],
-        derived_data_path: ".DataPath",
-        code_coverage: true)
+        code_coverage: true
+    )
+end
+
+private_lane :report do |params|
+    xcov(
+        project: params[:project],
+        scheme: params[:scheme],
+        output_directory: "./Report",
+        only_project_targets: true
+    )
 end
