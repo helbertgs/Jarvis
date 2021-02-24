@@ -6,6 +6,7 @@ setup:
 	brew update
 	brew upgrade
 	brew install xcodegen
+	$(BUNDLE) install
 
 generate: ## Create a xcodeproject
 	xcodegen generate
@@ -15,7 +16,7 @@ spm: ## Run all tests on Swift Package Manager
 	swift test
 
 unit: ## Run only unit tests
-	bundle exec fastlane unit --env $(platform)
+	$(FASTLANE) unit --env $(platform)
 
 doc: ## Generate docs
 	jazzy --module Jarvis
