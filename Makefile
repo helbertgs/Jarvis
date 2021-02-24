@@ -2,6 +2,14 @@ BUNDLE=rbenv exec bundle
 LANG_VAR=LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 FASTLANE=$(LANG_VAR) $(BUNDLE) exec fastlane
 
+setup:
+	brew update
+	brew upgrade
+	brew install xcodegen
+
+generate:
+	xcodegen generate
+
 unit: ## Run only unit tests
 	# bundle exec fastlane unit --env $(platform)
 	swift build -v
