@@ -1,7 +1,20 @@
+lane :generate do 
+    xcodegen(
+  	spec: "project.yml",
+  	project: ENV['project'],
+  	quiet: true,
+  	use_cache: false,
+  	project_root: "."
+  )
+end
+
 lane :unit do
     test(project: ENV['project'], scheme: ENV['scheme'], device: ENV['device'])
-    # report(project: ENV['project'], scheme: ENV['scheme'])
     codecov_reporter(token: ENV['codcov'])
+end
+
+lane :doc do 
+    jazzy(config: "./.jazzy.yaml")
 end
 
 private_lane :test do |params|
@@ -9,14 +22,5 @@ private_lane :test do |params|
         devices: params[:device],
         scheme: params[:scheme],
         code_coverage: true
-    )
-end
-
-private_lane :report do |params|
-    xcov(
-        project: params[:project],
-        scheme: params[:scheme],
-        output_directory: "./fastlane/test_output/xcov",
-        only_project_targets: true
     )
 end
