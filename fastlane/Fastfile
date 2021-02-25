@@ -1,6 +1,7 @@
 lane :unit do
     test(project: ENV['project'], scheme: ENV['scheme'], device: ENV['device'])
-    report(project: ENV['project'], scheme: ENV['scheme'])
+    # report(project: ENV['project'], scheme: ENV['scheme'])
+    codecov_reporter(token: ENV['codcov'])
 end
 
 private_lane :test do |params|
@@ -15,7 +16,7 @@ private_lane :report do |params|
     xcov(
         project: params[:project],
         scheme: params[:scheme],
-        output_directory: "./Report",
+        output_directory: "./fastlane/test_output/xcov",
         only_project_targets: true
     )
 end
