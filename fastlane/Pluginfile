@@ -1,0 +1,2 @@
+gem "fastlane-plugin-codecov_reporter"
+gem "fastlane-plugin-xcodegen"
