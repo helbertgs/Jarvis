@@ -15,9 +15,19 @@ Install _fastlane_ using
 or alternatively using `brew install fastlane`
 
 # Available Actions
+### generate
+```
+fastlane generate
+```
+
 ### unit
 ```
 fastlane unit
+```
+
+### doc
+```
+fastlane doc
 ```
 
 

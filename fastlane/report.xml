@@ -5,17 +5,7 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: Switch to test lane" time="0.000214">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="1: scan" time="24.516061">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="2: codecov_reporter" time="6.884427">
+      <testcase classname="fastlane.lanes" name="0: jazzy" time="9.610161">
         
       </testcase>
     

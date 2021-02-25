@@ -3,13 +3,10 @@ LANG_VAR=LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 FASTLANE=$(LANG_VAR) $(BUNDLE) exec fastlane
 
 setup:
-	brew update
-	brew upgrade
-	brew install xcodegen
 	$(BUNDLE) install
 
-generate: ## Create a xcodeproject
-	xcodegen generate
+generate: ## Generates the xcode project
+	$(FASTLANE) generate
 
 spm: ## Run all tests on Swift Package Manager
 	swift build
@@ -19,7 +16,7 @@ unit: ## Run only unit tests
 	$(FASTLANE) unit --env $(platform)
 
 doc: ## Generate docs
-	jazzy --module Jarvis
+	$(FASTLANE) doc
 
 wipe: ## Clean xcode temp files and shuts down simulators
 	killall "Simulator" || true

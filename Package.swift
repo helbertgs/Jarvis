@@ -28,5 +28,6 @@ let package = Package(
             name: "JarvisTests",
             dependencies: ["Jarvis", "Nimble", "Quick"],
             path: "Tests")
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )

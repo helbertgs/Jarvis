@@ -1,0 +1,7 @@
+author: "Helbert Gomes"
+author_url: https://github.com/helbertgs
+github_url: https://github.com/helbertgs/Jarvis
+module: Jarvis
+output: docs
+xcodebuild_arguments: [-project, 'Jarvis.xcodeproj', -scheme, 'Jarvis_iOS']
+separate_global_declarations: true
