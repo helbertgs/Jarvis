@@ -17,7 +17,7 @@
     <a title="Plugin Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Jarvis Docs</a> (22% documented)</p>
+        <p><a href="../index.html">Jarvis Docs</a> (50% documented)</p>
         <p class="header-right"><a href="https://github.com/helbertgs/Jarvis"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right">
           <form role="search" action="../search.json">
@@ -40,16 +40,16 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/Layer.html">Layer</a>
+                <a href="../Classes/Object.html">Object</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/Plugin.html">Plugin</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/Settings.html">Settings</a>
+                <a href="../Classes/Scene.html">Scene</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/Store.html">Store</a>
+                <a href="../Classes/Settings.html">Settings</a>
               </li>
             </ul>
           </li>
@@ -65,10 +65,7 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Protocols/LayerProtocol.html">LayerProtocol</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Protocols/PluginProtocol.html">PluginProtocol</a>
+                <a href="../Protocols/Behaviour.html">Behaviour</a>
               </li>
             </ul>
           </li>
@@ -81,7 +78,11 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Plugin</span> <span class="p">:</span> <span class="kt">ObservableObject</span><span class="p">,</span> <span class="kt"><a href="../Protocols/PluginProtocol.html">PluginProtocol</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Plugin</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Plugin</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Behaviour.html">Behaviour</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Plugin</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Plugin</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Plugin</span><span class="p">:</span> <span class="kt">Identifiable</span></code></pre>
 
                 </div>
               </div>
@@ -89,6 +90,167 @@
 
           </section>
           <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Property%28ies%29."></a>
+                <a name="//apple_ref/swift/Section/Public Property(ies)." class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Public%20Property%28ies%29."></a>
+                  <h3 class="section-name"><p>Public Property(ies).</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC4nameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC4nameSSvp">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Plugin name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC6objectAA6ObjectCvp"></a>
+                    <a name="//apple_ref/swift/Property/object" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC6objectAA6ObjectCvp">object</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The object of the plugin is attached.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">unowned</span> <span class="k">var</span> <span class="nv">object</span><span class="p">:</span> <span class="kt"><a href="../Classes/Object.html">Object</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC8isActiveSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isActive" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC8isActiveSbvp">isActive</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Defines whether the Object is active in the Scene.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isActive</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC8isEnableSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isEnable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC8isEnableSbvp">isEnable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enabled Behaviours are Updated, disabled Behaviours are not.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isEnable</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Constructor%28s%29."></a>
+                <a name="//apple_ref/swift/Section/Constructor(s)." class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Constructor%28s%29."></a>
+                  <h3 class="section-name"><p>Constructor(s).</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC4withAcA6ObjectC_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC4withAcA6ObjectC_tcfc">init(with:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">object</span><span class="p">:</span> <span class="kt"><a href="../Classes/Object.html">Object</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
             <div class="task-group">
               <div class="task-name-container">
                 <a name="/Public%20Function%28s%29."></a>
@@ -103,9 +265,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Jarvis6PluginC8isEnableSbvp"></a>
-                    <a name="//apple_ref/swift/Property/isEnable" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Jarvis6PluginC8isEnableSbvp">isEnable</a>
+                    <a name="/s:6Jarvis6PluginC3get6pluginxSgxm_tACRbzlF"></a>
+                    <a name="//apple_ref/swift/Method/get(plugin:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC3get6pluginxSgxm_tACRbzlF">get(plugin:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -113,15 +275,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Enabled plugins are Updated, disabled plugins are not.</p>
+                        <p>Returns the plugin of Type type if the object has one attached, null if it doesn&rsquo;t.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@Published</span>
-<span class="kd">public</span> <span class="k">var</span> <span class="nv">isEnable</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="k">get</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">(</span><span class="n">plugin</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">P</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">P</span><span class="p">?</span> <span class="k">where</span> <span class="kt">P</span> <span class="p">:</span> <span class="kt">Plugin</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC3get7pluginsSayxGxm_tACRbzlF"></a>
+                    <a name="//apple_ref/swift/Method/get(plugins:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC3get7pluginsSayxGxm_tACRbzlF">get(plugins:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all plugins of Type type in the Object.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="k">get</span><span class="o">&lt;</span><span class="kt">P</span><span class="o">&gt;</span><span class="p">(</span><span class="n">plugins</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">P</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">P</span><span class="p">]</span> <span class="k">where</span> <span class="kt">P</span> <span class="p">:</span> <span class="kt">Plugin</span></code></pre>
 
                         </div>
                       </div>
@@ -141,14 +329,262 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Awake is called when the Layer instance is being loaded.</p>
+                        <p>Awake is called when the script instance is being loaded.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">awake</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">awake</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC5startyyF"></a>
+                    <a name="//apple_ref/swift/Method/start()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC5startyyF">start()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Start is called when a plugin is enabled just before any of the update function are called the first time.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">start</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC6updateyyF"></a>
+                    <a name="//apple_ref/swift/Method/update()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC6updateyyF">update()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Update is called every State is update, if the Plugin is enabled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC5resetyyF"></a>
+                    <a name="//apple_ref/swift/Method/reset()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC5resetyyF">reset()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reset to default values.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">reset</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC8onEnableyyF"></a>
+                    <a name="//apple_ref/swift/Method/onEnable()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC8onEnableyyF">onEnable()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This function is called when the object becomes enabled and active.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">onEnable</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC9onDisableyyF"></a>
+                    <a name="//apple_ref/swift/Method/onDisable()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC9onDisableyyF">onDisable()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This function is called when the Plugin becomes disabled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">onDisable</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC9onDestroyyyF"></a>
+                    <a name="//apple_ref/swift/Method/onDestroy()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC9onDestroyyyF">onDestroy()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This function is callled when the Plugin is deinitialized.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">onDestroy</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:SQ2eeoiySbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SQ2eeoiySbx_xtFZ">==(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Plugin</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Plugin</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:SH4hash4intoys6HasherVz_tF"></a>
+                    <a name="//apple_ref/swift/Method/hash(into:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SH4hash4intoys6HasherVz_tF">hash(into:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">hash</span><span class="p">(</span><span class="n">into</span> <span class="nv">hasher</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Hasher</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Jarvis6PluginC2id10Foundation4UUIDVvp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Jarvis6PluginC2id10Foundation4UUIDVvp">id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Plugin id.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">UUID</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -160,7 +596,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://github.com/helbertgs" target="_blank" rel="external">Helbert Gomes</a>. All rights reserved. (Last updated: 2021-02-25)</p>
+          <p>&copy; 2021 <a class="link" href="https://github.com/helbertgs" target="_blank" rel="external">Helbert Gomes</a>. All rights reserved. (Last updated: 2021-03-01)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

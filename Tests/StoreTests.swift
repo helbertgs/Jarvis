@@ -10,39 +10,47 @@ final class StoreTests: QuickSpec {
             var store: Store!
 
             context("when add(layer:) is called") {
-                it("the get(layer:) should return the concret object of the same type") {
-                    let expectedValue = "\(Layer.self)"
+                it("should layer name be equal Layer") {
                     store = Store()
 
                     store.add(layers: Layer.self)
+                    let layer = store.get(layer: Layer.self)
 
-                    expect(store.get(layer: Layer.self)?.name).to(equal(expectedValue))
+                    expect(layer?.name).to(equal("\(Layer.self)"))
                 }
             }
 
             context("when add(plugins:on) is called") {
-                it("the get(plugin:from:) should return concret plugin of the same type") {
-                    let layerType = Layer.self
-                    let pluginType = Plugin.self
-                    let expectedValue = "\(Plugin.self)"
+                it("should plugin name be equal to Plugin") {
                     store = Store()
+                    store.add(layers: Layer.self)
+                    store.add(plugins: [Plugin.self], on: Layer.self)
 
-                    store.add(layers: layerType)
-                    store.add(plugins: [pluginType], on: layerType)
+                    let plugin: Plugin? = store.get(plugin: Plugin.self, from: Layer.self)
 
-                    expect(store.get(plugin: pluginType, from: layerType)?.name).to(equal(expectedValue))
+                    expect(plugin?.name).to(equal( "\(Plugin.self)"))
                 }
 
-                it("the get(plugin:from:) should return two objects of the same type") {
-                    let layerType = Layer.self
-                    let pluginType = Plugin.self
-                    let expectedValue = 2
+                it("should plugins count be equal to 2") {
                     store = Store()
 
-                    store.add(layers: layerType)
-                    store.add(plugins: [pluginType, pluginType], on: layerType)
+                    store.add(layers: Layer.self)
+                    store.add(plugins: [Plugin.self, Plugin.self], on: Layer.self)
 
-                    expect(store.get(plugin: pluginType, from: layerType).count).to(equal(expectedValue))
+                    let plugins = store.get(plugin: Plugin.self, from: Layer.self)
+                    expect(plugins.count).to(equal(2))
+                }
+
+                it("should isUpdated from plugin be equal true") {
+                    store = Store()
+                    let state = State(store: store)
+
+                    store.add(layers: LayerMock.self)
+                    state.isEnable = true
+
+                    let plugin = store?.get(plugin: PluginMock.self, from: LayerMock.self)
+
+                    expect(plugin?.isUpdated).to(beTrue())
                 }
             }
         }

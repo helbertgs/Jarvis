@@ -1,52 +1,55 @@
 import Foundation
 
-public protocol PluginProtocol: class {
+public class Plugin {
 
-    // MARK: - Property(ies).
+    // MARK: - Public Property(ies).
 
-    var isEnable: Bool { get set }
+    /// The Plugin name.
+    public var name: String
 
-    // MARK: - Function(s).
+    /// The object of the plugin is attached.
+    public unowned var object: Object
 
-    func awake()
-}
+    /// Defines whether the Object is active in the Scene.
+    public var isActive: Bool = false
 
-public class Plugin: ObservableObject, PluginProtocol {
+    /// Enabled Behaviours are Updated, disabled Behaviours are not.
+    public var isEnable: Bool = true {
+        willSet {
+            newValue ? self.onEnable() : self.onDisable()
+        }
+    }
 
-    // MARK: - Public Function(s).
+    // MARK: - Private Property(ies).
 
-    /// Enabled plugins are Updated, disabled plugins are not.
-    @Published
-    public var isEnable: Bool = true
-
-    /// The name of the Plugin
-    lazy var name: String = { "\(Self.self)" }()
-
-    // MARK: - Internal Property(ies).
-
-    unowned var layer: Layer
 
     // MARK: - Constructor(s).
 
-    @available(*, unavailable)
-    init() { fatalError() }
+    public required init(with object: Object) {
+        self.name = "\(Self.self)"
+        self.object = object
+    }
 
-    required init(layer: Layer) {
-        self.layer = layer
+    /// Unavailable constructor.
+    @available(*, unavailable)
+    public init() {
+        fatalError("")
+    }
+
+    /// Called when the Object is destroyed.
+    deinit {
+        self.onDestroy()
     }
 
     // MARK: - Public Function(s).
 
-    /// Awake is called when the Layer instance is being loaded.
-    open func awake() { }
-
-    // MARK: - Internal Function(s).
-
-    func get(plugin: Plugin.Type) -> Plugin? {
-        layer.get(plugin: plugin)
+    /// Returns the plugin of Type type if the object has one attached, null if it doesn't.
+    public func get<P: Plugin>(plugin type: P.Type) -> P? {
+        object.get(plugin: type)
     }
 
-    func get(plugin: Plugin.Type) -> [Plugin] {
-        layer.get(plugin: plugin)
+    /// Returns all plugins of Type type in the Object.
+    public func get<P: Plugin>(plugins type: P.Type) -> [P] {
+        object.get(plugins: type)
     }
 }
