@@ -15,10 +15,13 @@ public class Plugin {
 
     /// Enabled Behaviours are Updated, disabled Behaviours are not.
     public var isEnable: Bool = true {
-        willSet {
-            newValue ? self.onEnable() : self.onDisable()
-        }
+        willSet { newValue ? self.onEnable() : self.onDisable() }
     }
+
+    // MARK: - Open Property(ies).
+
+    /// The Require property automatically adds required plugins as dependencies.
+    open var required: [Plugin.Type] { [] }
 
     // MARK: - Private Property(ies).
 

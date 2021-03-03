@@ -13,15 +13,15 @@ public class Object {
     // MARK: - Private Property(ies).
 
     /// List of plugins attached in the Object.
-    private var plugins: [Plugin]
+    private var plugins: [Plugin] = []
 
     // MARK: - Constructor(s).
 
     /// Creates a new object, named name.
-    public init(name: String) {
+    public init(name: String, plugins: [Plugin.Type] = []) {
         self.name = name
         self.isEnable = true
-        self.plugins = []
+        plugins.forEach { self.add(plugin: $0) }
     }
 
     /// Creates a new object, named Object.
@@ -35,6 +35,7 @@ public class Object {
     @discardableResult
     public func add<P: Plugin>(plugin type: P.Type) -> Plugin {
         let plugin = type.init(with: self)
+        plugin.required.forEach { self.add(plugin: $0) }
         plugins.append(plugin)
 
         return plugin
