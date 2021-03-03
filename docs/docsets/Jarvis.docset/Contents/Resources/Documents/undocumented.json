@@ -85,6 +85,20 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/lahelbert/Development/Helbert/Jarvis/Sources/Object.swift",
+      "line": 7,
+      "symbol": "Object.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lahelbert/Development/Helbert/Jarvis/Sources/Object.swift",
+      "line": 8,
+      "symbol": "Object.isEnable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/lahelbert/Development/Helbert/Jarvis/Sources/Option.swift",
       "line": 3,
       "symbol": "Option",
@@ -177,7 +191,28 @@
     },
     {
       "file": "/Users/lahelbert/Development/Helbert/Jarvis/Sources/Plugin.swift",
-      "line": 28,
+      "line": 7,
+      "symbol": "Plugin.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lahelbert/Development/Helbert/Jarvis/Sources/Plugin.swift",
+      "line": 8,
+      "symbol": "Plugin.object",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lahelbert/Development/Helbert/Jarvis/Sources/Plugin.swift",
+      "line": 9,
+      "symbol": "Plugin.isEnable",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lahelbert/Development/Helbert/Jarvis/Sources/Plugin.swift",
+      "line": 20,
       "symbol": "Plugin.init(with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
